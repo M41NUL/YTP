@@ -34,28 +34,25 @@ Download videos in multiple qualities and audio as MP3 with live progress displa
 Open Termux and run these commands one by one:
 
 ```bash
-# Step 1: Setup storage permission
+# 1. Grant storage permission
 termux-setup-storage
 
-# Step 2: Update packages
-pkg update && pkg upgrade -y
+# 2. Update packages and install dependencies
+pkg update -y && pkg upgrade -y
+pkg install python git ffmpeg -y
 
-# Step 3: Install required packages
-pkg install python git ffmpeg python-pip -y
-
-# Step 4: Upgrade pip
+# 3. Install Python packages
 pip install --upgrade pip
-
-# Step 5: Clone YTP repository
-git clone https://github.com/M41NUL/YTP.git
-
-# Step 6: Enter YTP directory
-cd YTP
-
-# Step 7: Install Python dependencies
 pip install yt-dlp rich pyfiglet
 
-# Step 8: Run YTP
+# 4. Go to SD card and clone repository
+cd /sdcard
+git clone https://github.com/M41NUL/YTP.git
+
+# 5. Enter YTP folder
+cd YTP
+
+# 6. Run YTP
 python ytp.py
 ```
 
@@ -70,9 +67,9 @@ termux-setup-storage
 pkg update && pkg upgrade -y
 pkg install python git ffmpeg python-pip -y
 pip install --upgrade pip
+pip install yt-dlp rich pyfiglet
 git clone https://github.com/M41NUL/YTP.git
 cd YTP
-pip install yt-dlp rich pyfiglet
 python ytp.py
 ```
 ---
